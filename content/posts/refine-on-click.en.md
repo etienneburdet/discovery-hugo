@@ -1,7 +1,7 @@
 ---
 title: "Refine on Click"
 date: 2020-08-10T14:42:01+02:00
-draft: true
+draft: false
 ---
 
 # Use a map as a selector and display results on the side
