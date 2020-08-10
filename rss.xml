@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Code Library</title>
-        <link>https://example.com/</link>
+        <link>http://etienneburdet.com/discovery-hugo/</link>
         <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
         <generator>Hugo 0.74.3 https://gohugo.io/</generator>
         
@@ -23,15 +23,15 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Mon, 10 Aug 2020 17:48:51 &#43;0200</lastBuildDate>
+        <lastBuildDate>Mon, 10 Aug 2020 17:53:11 &#43;0200</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://example.com/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="http://etienneburdet.com/discovery-hugo/rss.xml" />
         
         
             <item>
                 <title>Refine on Click</title>
-                <link>https://example.com/posts/refine-on-click/</link>
-                <guid isPermaLink="true">https://example.com/posts/refine-on-click/</guid>
+                <link>http://etienneburdet.com/discovery-hugo/posts/refine-on-click/</link>
+                <guid isPermaLink="true">http://etienneburdet.com/discovery-hugo/posts/refine-on-click/</guid>
                 <pubDate>Mon, 10 Aug 2020 14:42:01 &#43;0200</pubDate>
                 
                     <author>reuixiy@gmail.com (reuixiy)</author>
