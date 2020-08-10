@@ -1,7 +1,7 @@
 ##########################################
 # Site Settings
 
-baseURL = "https://example.com/"
+baseURL = "http://etienneburdet.com/discovery-hugo/"
 title = "Hugo Theme MemE"
 languageCode = "en"
 hasCJKLanguage = false
@@ -1269,7 +1269,7 @@ uglyURLs = false
     ######################################
     # Fingerprinting and SRI
 
-    enableFingerprint = false
+    enableFingerprint = true
     # Note: valid for CSS and JS generated
     #       by MemE only
 

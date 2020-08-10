@@ -3,75 +3,75 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.com/</loc>
+    <loc>http://etienneburdet.com/discovery-hugo/</loc>
     <lastmod>2020-08-10T17:12:41+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://example.com/fr/"
+                href="http://etienneburdet.com/discovery-hugo/fr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/"
+                href="http://etienneburdet.com/discovery-hugo/"
                 />
   </url>
   
   <url>
-    <loc>https://example.com/posts/</loc>
+    <loc>http://etienneburdet.com/discovery-hugo/posts/</loc>
     <lastmod>2020-08-10T17:12:41+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://example.com/fr/posts/"
+                href="http://etienneburdet.com/discovery-hugo/fr/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/posts/"
+                href="http://etienneburdet.com/discovery-hugo/posts/"
                 />
   </url>
   
   <url>
-    <loc>https://example.com/posts/refine-on-click/</loc>
+    <loc>http://etienneburdet.com/discovery-hugo/posts/refine-on-click/</loc>
     <lastmod>2020-08-10T17:12:41+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://example.com/fr/posts/refine-on-click/"
+                href="http://etienneburdet.com/discovery-hugo/fr/posts/refine-on-click/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/posts/refine-on-click/"
+                href="http://etienneburdet.com/discovery-hugo/posts/refine-on-click/"
                 />
   </url>
   
   <url>
-    <loc>https://example.com/categories/</loc>
+    <loc>http://etienneburdet.com/discovery-hugo/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://example.com/fr/categories/"
+                href="http://etienneburdet.com/discovery-hugo/fr/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/categories/"
+                href="http://etienneburdet.com/discovery-hugo/categories/"
                 />
   </url>
   
   <url>
-    <loc>https://example.com/tags/</loc>
+    <loc>http://etienneburdet.com/discovery-hugo/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="https://example.com/fr/tags/"
+                href="http://etienneburdet.com/discovery-hugo/fr/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.com/tags/"
+                href="http://etienneburdet.com/discovery-hugo/tags/"
                 />
   </url>
   

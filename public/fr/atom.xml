@@ -4,13 +4,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="fr-FR">
     <title type="text">Bibliothèque de code</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-08-10T17:48:51&#43;02:00</updated>
-    <id>https://example.com/fr/</id>
-    <link rel="alternate" type="text/html" href="https://example.com/fr/" />
-    <link rel="self" type="application/atom&#43;xml" href="https://example.com/fr/atom.xml" />
+    <updated>2020-08-10T17:53:11&#43;02:00</updated>
+    <id>http://etienneburdet.com/discovery-hugo/fr/</id>
+    <link rel="alternate" type="text/html" href="http://etienneburdet.com/discovery-hugo/fr/" />
+    <link rel="self" type="application/atom&#43;xml" href="http://etienneburdet.com/discovery-hugo/fr/atom.xml" />
     <author>
             <name>reuixiy</name>
-            <uri>https://example.com/fr/</uri>
+            <uri>http://etienneburdet.com/fr/</uri>
             
                 <email>reuixiy@gmail.com</email>
             </author>
@@ -18,8 +18,8 @@
     <generator uri="https://gohugo.io/" version="0.74.3">Hugo</generator>
         <entry>
             <title type="text">Refine on Click</title>
-            <link rel="alternate" type="text/html" href="https://example.com/fr/posts/refine-on-click/" />
-            <id>https://example.com/fr/posts/refine-on-click/</id>
+            <link rel="alternate" type="text/html" href="http://etienneburdet.com/discovery-hugo/fr/posts/refine-on-click/" />
+            <id>http://etienneburdet.com/discovery-hugo/fr/posts/refine-on-click/</id>
             <updated>2020-08-10T17:12:48&#43;02:00</updated>
             <published>2020-08-10T15:30:51&#43;02:00</published>
             <author>
