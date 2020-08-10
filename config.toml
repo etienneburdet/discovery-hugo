@@ -18,6 +18,7 @@ newContentEditor = ""
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
+
 # Pluralize titles in lists?
 pluralizeListTitles = false
 
@@ -1242,11 +1243,11 @@ uglyURLs = false
     ######################################
     # Multilingual
 
-    enableLangToggle = false
+    enableLangToggle = true
 
     hideLangToggleInHome = false
 
-    autoHideLangToggle = true
+    autoHideLangToggle = false
     # Note: in other words, the toggle is
     #       displayed only when the post
     #       has a translated version
@@ -1325,3 +1326,17 @@ uglyURLs = false
     fofVideoMp4 = ""
     # Note: you can leave these two
     #       options empty("")
+
+[languages]
+  [languages.en]
+    title = "Code Library"
+    weight = 1
+    languageName = "EN"
+    languageCode = "en-EN"
+    contentDir = "content"
+  [languages.fr]
+    title = "Bibliothèque de code"
+    weight = 2
+    languageName = "FR"
+    languageCode = "fr-FR"
+    contentDir = "content"
