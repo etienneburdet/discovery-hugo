@@ -73,6 +73,91 @@ N.B.: grey areas help the user to come back to the map quickly if they want to c
     </div>
 </div>
 {{&lt; / highlight &gt;}}
+{{&lt; ods-page &gt;}}
+<ods-dataset-context context="shanghai,shanghaihistoric" shanghai-dataset="shanghai-world-university-ranking" shanghai-domain="fpassaniti" shanghaihistoric-dataset="shanghai-world-university-ranking" shanghaihistoric-domain="fpassaniti" shanghaihistoric-parameters="{&apos;sort&apos;:&apos;year&apos;}">
+    <div class="ods-box">
+        <h2>
+            Shanghai World University Ranking
+        </h2>
+        <div class="map-drawer-container" ng-class="{
+                       &apos;map-drawer-container--active&apos;: shanghai.parameters[&apos;refine.country&apos;],
+                       &apos;map-drawer-container--active-full&apos;: drawer.status}" ng-init="drawer = {&apos;status&apos;:false}">    
+            <div class="map-drawer-container__map">
+                <div class="map-drawer-container__backdrop" ng-click="shanghai.parameters[&apos;refine.country&apos;] = undefined;
+                               shanghaihistoric.parameters[&apos;refine.university_namex&apos;] = undefined;
+                               drawer.status = false" ng-class="{&apos;map-drawer-container__backdrop--active&apos;: shanghai.parameters[&apos;refine.country&apos;] }">
+                </div>
+                <ods-map no-refit="false" scroll-wheel-zoom="true" display-control="false" toolbar-fullscreen="false" toolbar-drawing="false" toolbar-geolocation="false" location="2,33.39542,4.10444">
+                    <ods-map-layer context="shanghai" display="choropleth" function="AVG" expression="world_rank_integer" color-numeric-ranges="{&apos;120&apos;:&apos;#000000&apos;,&apos;175&apos;:&apos;#2E3539&apos;,&apos;225&apos;:&apos;#5D6A73&apos;,&apos;350&apos;:&apos;#8C9FAD&apos;,&apos;500&apos;:&apos;#BBD5E7&apos;}" color-undefined="#FFFFFF" color-out-of-bounds="#FFFFFF" color-numeric-range-min="1" shape-opacity="0.9" caption="false" refine-on-click-context="[shanghai,shanghaihistoric]" refine-on-click-shanghai-context-field="country" refine-on-click-shanghai-map-field="country" refine-on-click-shanghai-replace-refine="true" refine-on-click-shanghaihistoric-context-field="country" refine-on-click-shanghaihistoric-map-field="country" refine-on-click-shanghaihistoric-replace-refine="true">
+                    </ods-map-layer>
+                </ods-map>
+            </div>
+            <div class="map-drawer-container__info">
+                <h2>
+                    Pick a country on the map
+                </h2>
+            </div>
+            <div class="map-drawer-container__drawer map-drawer-container__drawer__partial">                      
+                <div class="map-drawer-container__drawer__close" ng-click="shanghai.parameters[&apos;refine.country&apos;] = undefined;
+                               shanghaihistoric.parameters[&apos;refine.university_namex&apos;] = undefined;
+                               drawer.status = false">
+                    <i class="fa fa-times"></i>
+                </div>
+                <h2>
+                    {{ shanghai.parameters[&apos;refine.country&apos;] }} universities
+                </h2>
+                <h3>
+                    sorted by average ranking
+                </h3>
+                <div ods-analysis="univs" ods-analysis-context="shanghai" ods-analysis-x="university_name" ods-analysis-max="0" ods-analysis-serie-agg="AVG(world_rank_integer)" ods-analysis-sort="-agg">
+                    <ul>
+                        <li class="univ">
+                            <div class="univ-name">
+                                University
+                            </div>
+                            <div class="univ-score">
+                                Avg. rank
+                            </div>
+                            <div class="univ-seemore">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            </div>
+                        </li><li ng-repeat="univ in univs.results" class="univ">
+                            <div class="univ-name" ng-class="{&apos;univ-selected&apos;: shanghaihistoric.parameters[&apos;refine.university_name&apos;] == univ.x}">
+                                {{ univ.x }}
+                            </div>
+                            <div class="univ-score">
+                                {{ univ.agg | number : 0 }}
+                            </div>
+                            <div class="univ-seemore" ng-click="shanghaihistoric.parameters[&apos;refine.university_name&apos;] = univ.x;
+                                           drawer.status = true">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            </div>
+                        </li>
+                    </ul>                        
+                </div>
+            </div>
+            <div class="map-drawer-container__drawer map-drawer-container__drawer__full">
+                <h2>
+                    {{ shanghaihistoric.parameters[&apos;refine.university_name&apos;] }} ({{ shanghai.parameters[&apos;refine.country&apos;] }})
+                </h2>
+                <ods-tabs layout="simple-nav" pane-auto-unload="true">
+                    <ods-pane title="Chart">
+                        <ods-chart timescale="year" display-legend="false" align-month="false">
+                            <ods-chart-query context="shanghaihistoric" field-x="year" maxpoints="200" timescale="year">
+                                <ods-chart-serie expression-y="world_rank_integer" chart-type="column" function-y="AVG" label-y="Ranking range per year" color="#142E7B" display-units="true" scientific-display="true">
+                                </ods-chart-serie>
+                            </ods-chart-query>
+                        </ods-chart>
+                    </ods-pane>
+                    <ods-pane title="Table" pane-auto-unload="true">
+                        <ods-table context="shanghaihistoric" displayed-fields="world_rank,national_rank,year"></ods-table>
+                    </ods-pane>
+                </ods-tabs>
+            </div>
+        </div>
+    </div>
+</ods-dataset-context>
+{{&lt; / ods-page &gt;}}
 </article></div><div style="background-color: #b4b2b2;width: 50px;height:50px;line-height: 50px;text-align: center;position: fixed;bottom: 10px;right: 10px;padding-top:5px;" onclick="document.documentElement.scrollTop = document.body.scrollTop =0;">
   <svg t="1533629773982" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1035" xlink="http://www.w3.org/1999/xlink" width="40" height="40"><defs><style type="text/css">@font-face { font-family: uc-nexus-iconfont; src: url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.woff") format("woff"), url("chrome-extension://pogijhnlcfmcppgimcaccdkmbedjkmhi/res/font_9qmmi8b8jsxxbt9.ttf") format("truetype"); }
   </style></defs><path d="M536.255427 195.182354c-7.804756-7.804756-17.966187-11.615549-28.311813-11.615549-9.43693 0-18.874883 3.449565-26.496467 10.163477-2.360767 1.452071-4.356214 3.267417-6.352685 5.262864L218.47792 455.611735c-15.607466 15.60542-15.607466 40.834011 0 56.43943 15.607466 15.607466 41.558511 15.607466 57.167001 0l193.46013-192.733583 0 600.526219c0 22.1423 17.787108 39.927361 39.927361 39.927361 22.140253 0 39.927361-17.785062 39.927361-39.927361L548.959773 319.317583 737.15704 508.422522c15.607466 15.607466 40.469714 15.607466 56.078203 0 15.607466-15.607466 15.425318-40.834011-0.182149-56.441477L536.255427 195.182354 536.255427 195.182354z" p-id="1036" fill="#333"/><path d="M101.784174 143.097092l816.674071 0c22.140253 0 39.925315-17.785062 39.925315-39.927361 0-22.140253-17.784038-39.925315-39.925315-39.925315L101.784174 63.244416c-22.140253 0-39.927361 17.785062-39.927361 39.925315C61.856813 125.31203 79.643921 143.097092 101.784174 143.097092L101.784174 143.097092z" p-id="1037" fill="#333"/></svg>
