@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Mon, 10 Aug 2020 17:55:58 &#43;0200</lastBuildDate>
+        <lastBuildDate>Tue, 11 Aug 2020 10:37:28 &#43;0200</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="http://etienneburdet.com/discovery-hugo/rss.xml" />
         
@@ -47,7 +47,7 @@
 &lt;/ul&gt;
 &lt;p&gt;This template is the best solution when you desire to display a lot of information and that just can&amp;rsquo;t fit in the default tooltip !
 N.B.: grey areas help the user to come back to the map quickly if they want to change their selection&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -144,6 +144,265 @@ N.B.: grey areas help the user to come back to the map quickly if they want to c
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;div ng-cloak ng-app=&#34;ods-widgets&#34;&gt;
+  
+&lt;ods-dataset-context context=&#34;shanghai,shanghaihistoric&#34;
+                     shanghai-dataset=&#34;shanghai-world-university-ranking&#34;
+                     shanghai-domain=&#34;fpassaniti&#34;
+                     shanghaihistoric-dataset=&#34;shanghai-world-university-ranking&#34;
+                     shanghaihistoric-domain=&#34;fpassaniti&#34;
+                     shanghaihistoric-parameters=&#34;{&#39;sort&#39;:&#39;year&#39;}&#34;&gt;
+    &lt;div class=&#34;ods-box&#34;&gt;
+        &lt;h2&gt;
+            Shanghai World University Ranking
+        &lt;/h2&gt;
+        &lt;div class=&#34;map-drawer-container&#34;
+             ng-class=&#34;{
+                       &#39;map-drawer-container--active&#39;: shanghai.parameters[&#39;refine.country&#39;],
+                       &#39;map-drawer-container--active-full&#39;: drawer.status}&#34;
+             ng-init=&#34;drawer = {&#39;status&#39;:false}&#34;&gt;    
+            &lt;div class=&#34;map-drawer-container__map&#34;&gt;
+                &lt;div class=&#34;map-drawer-container__backdrop&#34;
+                     ng-click=&#34;shanghai.parameters[&#39;refine.country&#39;] = undefined;
+                               shanghaihistoric.parameters[&#39;refine.university_namex&#39;] = undefined;
+                               drawer.status = false&#34;
+                     ng-class=&#34;{&#39;map-drawer-container__backdrop--active&#39;: shanghai.parameters[&#39;refine.country&#39;] }&#34;&gt;
+                &lt;/div&gt;
+                &lt;ods-map no-refit=&#34;false&#34;
+                         scroll-wheel-zoom=&#34;true&#34;
+                         display-control=&#34;false&#34;
+                         toolbar-fullscreen=&#34;false&#34;
+                         toolbar-drawing=&#34;false&#34;
+                         toolbar-geolocation=&#34;false&#34;
+                         location=&#34;2,33.39542,4.10444&#34;&gt;
+                    &lt;ods-map-layer context=&#34;shanghai&#34;
+                                   display=&#34;choropleth&#34;
+                                   function=&#34;AVG&#34;
+                                   expression=&#34;world_rank_integer&#34;
+                                   color-numeric-ranges=&#34;{&#39;120&#39;:&#39;#000000&#39;,&#39;175&#39;:&#39;#2E3539&#39;,&#39;225&#39;:&#39;#5D6A73&#39;,&#39;350&#39;:&#39;#8C9FAD&#39;,&#39;500&#39;:&#39;#BBD5E7&#39;}&#34;
+                                   color-undefined=&#34;#FFFFFF&#34;
+                                   color-out-of-bounds=&#34;#FFFFFF&#34;
+                                   color-numeric-range-min=&#34;1&#34;
+                                   shape-opacity=&#34;0.9&#34;
+                                   caption=&#34;false&#34;
+                                   refine-on-click-context=&#34;[shanghai,shanghaihistoric]&#34;
+                                   refine-on-click-shanghai-context-field=&#34;country&#34;
+                                   refine-on-click-shanghai-map-field=&#34;country&#34;
+                                   refine-on-click-shanghai-replace-refine=&#34;true&#34;
+                                   refine-on-click-shanghaihistoric-context-field=&#34;country&#34;
+                                   refine-on-click-shanghaihistoric-map-field=&#34;country&#34;
+                                   refine-on-click-shanghaihistoric-replace-refine=&#34;true&#34;&gt;
+                    &lt;/ods-map-layer&gt;
+                &lt;/ods-map&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;map-drawer-container__info&#34;&gt;
+                &lt;h2&gt;
+                    Pick a country on the map
+                &lt;/h2&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;map-drawer-container__drawer map-drawer-container__drawer__partial&#34;&gt;                      
+                &lt;div class=&#34;map-drawer-container__drawer__close&#34;
+                     ng-click=&#34;shanghai.parameters[&#39;refine.country&#39;] = undefined;
+                               shanghaihistoric.parameters[&#39;refine.university_namex&#39;] = undefined;
+                               drawer.status = false&#34;&gt;
+                    &lt;i class=&#34;fa fa-times&#34;&gt;&lt;/i&gt;
+                &lt;/div&gt;
+                &lt;h2&gt;
+                    {{ shanghai.parameters[&#39;refine.country&#39;] }} universities
+                &lt;/h2&gt;
+                &lt;h3&gt;
+                    sorted by average ranking
+                &lt;/h3&gt;
+                &lt;div ods-analysis=&#34;univs&#34;
+                     ods-analysis-context=&#34;shanghai&#34;
+                     ods-analysis-x=&#34;university_name&#34;
+                     ods-analysis-max=&#34;0&#34;
+                     ods-analysis-serie-agg=&#34;AVG(world_rank_integer)&#34;
+                     ods-analysis-sort=&#34;-agg&#34;&gt;
+                    &lt;ul&gt;
+                        &lt;li class=&#34;univ&#34;&gt;
+                            &lt;div class=&#34;univ-name&#34;&gt;
+                                University
+                            &lt;/div&gt;
+                            &lt;div class=&#34;univ-score&#34;&gt;
+                                Avg. rank
+                            &lt;/div&gt;
+                            &lt;div class=&#34;univ-seemore&#34;&gt;
+                                &lt;i class=&#34;fa fa-line-chart&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                        &lt;li ng-repeat=&#34;univ in univs.results&#34;
+                            class=&#34;univ&#34;&gt;
+                            &lt;div class=&#34;univ-name&#34;
+                                 ng-class=&#34;{&#39;univ-selected&#39;: shanghaihistoric.parameters[&#39;refine.university_name&#39;] == univ.x}&#34;&gt;
+                                {{ univ.x }}
+                            &lt;/div&gt;
+                            &lt;div class=&#34;univ-score&#34;&gt;
+                                {{ univ.agg | number : 0 }}
+                            &lt;/div&gt;
+                            &lt;div class=&#34;univ-seemore&#34;
+                                 ng-click=&#34;shanghaihistoric.parameters[&#39;refine.university_name&#39;] = univ.x;
+                                           drawer.status = true&#34;&gt;
+                                &lt;i class=&#34;fa fa-line-chart&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;                        
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;map-drawer-container__drawer map-drawer-container__drawer__full&#34;&gt;
+                &lt;h2&gt;
+                    {{ shanghaihistoric.parameters[&#39;refine.university_name&#39;] }} ({{ shanghai.parameters[&#39;refine.country&#39;] }})
+                &lt;/h2&gt;
+                &lt;ods-tabs layout=&#34;simple-nav&#34; pane-auto-unload=&#34;true&#34;&gt;
+                    &lt;ods-pane title=&#34;Chart&#34;&gt;
+                        &lt;ods-chart timescale=&#34;year&#34; display-legend=&#34;false&#34; align-month=&#34;false&#34;&gt;
+                            &lt;ods-chart-query context=&#34;shanghaihistoric&#34; field-x=&#34;year&#34; maxpoints=&#34;200&#34; timescale=&#34;year&#34;&gt;
+                                &lt;ods-chart-serie expression-y=&#34;world_rank_integer&#34; chart-type=&#34;column&#34; function-y=&#34;AVG&#34; label-y=&#34;Ranking range per year&#34; color=&#34;#142E7B&#34; display-units=&#34;true&#34; scientific-display=&#34;true&#34;&gt;
+                                &lt;/ods-chart-serie&gt;
+                            &lt;/ods-chart-query&gt;
+                        &lt;/ods-chart&gt;
+                    &lt;/ods-pane&gt;
+                    &lt;ods-pane title=&#34;Table&#34; pane-auto-unload=&#34;true&#34;&gt;
+                        &lt;ods-table context=&#34;shanghaihistoric&#34;
+                                   displayed-fields=&#34;world_rank,national_rank,year&#34;&gt;&lt;/ods-table&gt;
+                    &lt;/ods-pane&gt;
+                &lt;/ods-tabs&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/ods-dataset-context&gt;
+
+&lt;/div&gt;
+
+&lt;style&gt;
+  :root {
+    --drawer-width: 320px;
+    --map-width: calc(100% - var(--drawer-width));
+    --backdrop-width-when-modal-active: 75px;
+    --drawer-background-color: white;
+}
+
+.map-drawer-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+.map-drawer-container__map {
+    position:relative;
+    width: var(--map-width);
+}
+.map-drawer-container__info {
+    width: var(--drawer-width);
+}
+ 
+.map-drawer-container__backdrop {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+    background-color: #000;
+    cursor: default;
+    -webkit-transition: visibility .5s,opacity .5s;
+    transition: visibility .5s,opacity .5s;
+}
+.map-drawer-container__backdrop--active {
+    visibility: visible;
+    opacity: .45;  
+}
+.map-drawer-container__drawer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: var(--drawer-background-color);
+    transition: 0.3s;
+}
+.map-drawer-container__drawer__partial {
+    right: calc(-1 * var(--drawer-width));
+    width: var(--drawer-width);
+    z-index: 11;
+}
+.map-drawer-container__drawer__full {
+    right: calc(-1 * var(--map-width));
+    width: calc(var(--map-width) - var(--backdrop-width-when-modal-active));
+    z-index: 10;
+}
+
+.map-drawer-container__drawer__close {
+    position: absolute;
+    top: 0px;
+    right: 8px;
+    font-size: 1.5em;
+}
+
+ 
+.map-drawer-container--active .map-drawer-container__drawer__partial {
+    right: 0;
+}
+
+ 
+.map-drawer-container--active-full .map-drawer-container__drawer__full {
+    right: var(--drawer-width);
+}
+
+
+ 
+.odswidget.odswidget-map {
+    height: 500px;
+}
+.map-drawer-container__info {
+    background-color: #f8f8f8;
+    padding: 5px 10px;
+}
+.app h2, .map-drawer-container__drawer h2, .map-drawer-container__info h2 {
+    font-weight: 300;
+    color: black;
+    text-align: center;
+}
+.map-drawer-container__drawer {
+    padding: 5px 10px;
+}
+.map-drawer-container__drawer h3 {
+    font-weight: 100;
+    color: black;
+    margin-top: 0px;
+    text-align: center;
+}
+ul {
+    list-style: none;
+    position: relative;
+    padding: 0;
+    overflow: auto;
+}
+li.univ {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0px;
+}
+li.univ:first-child {
+    border-bottom: 1px solid;
+    font-weight: 200;
+}
+.univ-name {
+    width: 100%;
+    font-weight: 100;
+    margin-left: 5px;
+}
+.univ-score {
+    margin: 0 5px;
+    font-weight: 600;
+}
+li.univ:first-child .univ-score {
+    width: 100%;
+    text-align: right;
+}
+.univ-selected {
+    border-left: 3px solid;
+    padding-left: 2px;
+    margin-left: 0;
+}
+&lt;/style&gt;
+&lt;/p&gt;
 </description>
                 
                 

@@ -18,7 +18,49 @@
 
     
     
-        <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js" defer></script><script src="/discovery-hugo/js/meme.min.1ddf15eb9363fd04b3c492502fd29d6091d79d67f23394f9cbec42f3e85795cd.js" integrity="sha256-Hd8V65Nj/QSzxJJQL9KdYJHXnWfyM5T5y&#43;xC8&#43;hXlc0="></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-sanitize.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/i18n/angular-locale_fr-fr.js"></script>
+<script type="text/javascript" src="//opendatasoft.github.io/ods-widgets/dist/ods-widgets.js"></script>
+
+       
+       <script type="text/javascript">
+           var ods = angular.module('ods-widgets');
+           ods.run(function(gettextCatalog) {
+               gettextCatalog.setStrings('fr', {
+                   'Clear all': 'Tout effacer',
+                   'More': 'Voir plus',
+                   'Less': 'Voir moins',
+                   'Download image': 'Télécharger l\'image'
+               });
+               gettextCatalog.setCurrentLanguage('fr');
+           });
+       </script>
+
+       
+       
+
+       
+       <script type="text/javascript">
+           angular.module('ods-widgets').config(function(ODSWidgetsConfigProvider) {
+               ODSWidgetsConfigProvider.setConfig({
+                   "basemaps": [
+                       {
+                           "label": "Stamen",
+                           "provider": "stamen.toner"
+                       },
+                       {
+                           "url": "https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png",
+                           "strictTMS": false,
+                           "provider": "custom",
+                           "label": "Thunderforest",
+                           "id": "land"
+                       }
+                   ]
+               });
+           });
+       </script><script src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js" defer></script><script src="/discovery-hugo/js/meme.min.028f97b22694be266af8db0f3f059f5dd311a1092ded2a97f66b5f9d2899e8d7.js" integrity="sha256-Ao&#43;XsiaUviZq&#43;NsPPwWfXdMRoQkt7SqX9mtfnSiZ6Nc="></script>
 
     
 
@@ -26,6 +68,8 @@
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Comfortaa:wght@700&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Comfortaa:wght@700&amp;display=swap" /></noscript>
+    
+    <link rel="stylesheet" href="https://opendatasoft.github.io/ods-widgets/dist/ods-widgets.css">
 
     <meta name="author" content="reuixiy" /><meta name="description" content="Use a map as a selector and display results on the side This template propose a 2 steps dynamic view. First you propose a map with clickable points or shapes.
  Global information are displayed on the side. Then, the user clic on the map, it then open a drawer with specific information relative to the selection." />
@@ -55,13 +99,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2020-08-10T14:42:01+02:00",
-        "dateModified": "2020-08-10T17:12:41+02:00",
+        "dateModified": "2020-08-11T10:35:27+02:00",
         "url": "http://etienneburdet.com/discovery-hugo/posts/refine-on-click/",
         "headline": "Refine on Click",
         "description": "Use a map as a selector and display results on the side This template propose a 2 steps dynamic view. First you propose a map with clickable points or shapes.\n Global information are displayed on the side. Then, the user clic on the map, it then open a drawer with specific information relative to the selection.",
         "inLanguage" : "en-EN",
         "articleSection": "posts",
-        "wordCount":  260 ,
+        "wordCount":  533 ,
         "image": "http://etienneburdet.com/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -109,7 +153,7 @@
         <meta property="og:image" content="http://etienneburdet.com/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2020-08-10T14:42:01&#43;02:00" />
-    <meta property="article:modified_time" content="2020-08-10T17:12:41&#43;02:00" />
+    <meta property="article:modified_time" content="2020-08-11T10:35:27&#43;02:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -259,7 +303,7 @@
     
     
         
-        <time datetime="2020-08-10T17:12:41&#43;02:00" class="post-meta-item modified"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.8.10</time>
+        <time datetime="2020-08-11T10:35:27&#43;02:00" class="post-meta-item modified"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2020.8.11</time>
     
     
     
@@ -271,11 +315,11 @@
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;260</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;533</span>
     
     
         
-        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;2&nbsp;mins</span>
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;3&nbsp;mins</span>
     
     
     
@@ -293,7 +337,7 @@
 </ul>
 <p>This template is the best solution when you desire to display a lot of information and that just can&rsquo;t fit in the default tooltip !
 N.B.: grey areas help the user to come back to the map quickly if they want to change their selection</p>
-<div class="highlight"><div class="chroma">
+<p><div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -390,6 +434,265 @@ N.B.: grey areas help the user to come back to the map quickly if they want to c
 </code></pre></td></tr></table></div>
 </div>
 </div>
+<div ng-cloak ng-app="ods-widgets">
+  
+<ods-dataset-context context="shanghai,shanghaihistoric"
+                     shanghai-dataset="shanghai-world-university-ranking"
+                     shanghai-domain="fpassaniti"
+                     shanghaihistoric-dataset="shanghai-world-university-ranking"
+                     shanghaihistoric-domain="fpassaniti"
+                     shanghaihistoric-parameters="{'sort':'year'}">
+    <div class="ods-box">
+        <h2>
+            Shanghai World University Ranking
+        </h2>
+        <div class="map-drawer-container"
+             ng-class="{
+                       'map-drawer-container--active': shanghai.parameters['refine.country'],
+                       'map-drawer-container--active-full': drawer.status}"
+             ng-init="drawer = {'status':false}">    
+            <div class="map-drawer-container__map">
+                <div class="map-drawer-container__backdrop"
+                     ng-click="shanghai.parameters['refine.country'] = undefined;
+                               shanghaihistoric.parameters['refine.university_namex'] = undefined;
+                               drawer.status = false"
+                     ng-class="{'map-drawer-container__backdrop--active': shanghai.parameters['refine.country'] }">
+                </div>
+                <ods-map no-refit="false"
+                         scroll-wheel-zoom="true"
+                         display-control="false"
+                         toolbar-fullscreen="false"
+                         toolbar-drawing="false"
+                         toolbar-geolocation="false"
+                         location="2,33.39542,4.10444">
+                    <ods-map-layer context="shanghai"
+                                   display="choropleth"
+                                   function="AVG"
+                                   expression="world_rank_integer"
+                                   color-numeric-ranges="{'120':'#000000','175':'#2E3539','225':'#5D6A73','350':'#8C9FAD','500':'#BBD5E7'}"
+                                   color-undefined="#FFFFFF"
+                                   color-out-of-bounds="#FFFFFF"
+                                   color-numeric-range-min="1"
+                                   shape-opacity="0.9"
+                                   caption="false"
+                                   refine-on-click-context="[shanghai,shanghaihistoric]"
+                                   refine-on-click-shanghai-context-field="country"
+                                   refine-on-click-shanghai-map-field="country"
+                                   refine-on-click-shanghai-replace-refine="true"
+                                   refine-on-click-shanghaihistoric-context-field="country"
+                                   refine-on-click-shanghaihistoric-map-field="country"
+                                   refine-on-click-shanghaihistoric-replace-refine="true">
+                    </ods-map-layer>
+                </ods-map>
+            </div>
+            <div class="map-drawer-container__info">
+                <h2>
+                    Pick a country on the map
+                </h2>
+            </div>
+            <div class="map-drawer-container__drawer map-drawer-container__drawer__partial">                      
+                <div class="map-drawer-container__drawer__close"
+                     ng-click="shanghai.parameters['refine.country'] = undefined;
+                               shanghaihistoric.parameters['refine.university_namex'] = undefined;
+                               drawer.status = false">
+                    <i class="fa fa-times"></i>
+                </div>
+                <h2>
+                    {{ shanghai.parameters['refine.country'] }} universities
+                </h2>
+                <h3>
+                    sorted by average ranking
+                </h3>
+                <div ods-analysis="univs"
+                     ods-analysis-context="shanghai"
+                     ods-analysis-x="university_name"
+                     ods-analysis-max="0"
+                     ods-analysis-serie-agg="AVG(world_rank_integer)"
+                     ods-analysis-sort="-agg">
+                    <ul>
+                        <li class="univ">
+                            <div class="univ-name">
+                                University
+                            </div>
+                            <div class="univ-score">
+                                Avg. rank
+                            </div>
+                            <div class="univ-seemore">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            </div>
+                        <li ng-repeat="univ in univs.results"
+                            class="univ">
+                            <div class="univ-name"
+                                 ng-class="{'univ-selected': shanghaihistoric.parameters['refine.university_name'] == univ.x}">
+                                {{ univ.x }}
+                            </div>
+                            <div class="univ-score">
+                                {{ univ.agg | number : 0 }}
+                            </div>
+                            <div class="univ-seemore"
+                                 ng-click="shanghaihistoric.parameters['refine.university_name'] = univ.x;
+                                           drawer.status = true">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                            </div>
+                        </li>
+                    </ul>                        
+                </div>
+            </div>
+            <div class="map-drawer-container__drawer map-drawer-container__drawer__full">
+                <h2>
+                    {{ shanghaihistoric.parameters['refine.university_name'] }} ({{ shanghai.parameters['refine.country'] }})
+                </h2>
+                <ods-tabs layout="simple-nav" pane-auto-unload="true">
+                    <ods-pane title="Chart">
+                        <ods-chart timescale="year" display-legend="false" align-month="false">
+                            <ods-chart-query context="shanghaihistoric" field-x="year" maxpoints="200" timescale="year">
+                                <ods-chart-serie expression-y="world_rank_integer" chart-type="column" function-y="AVG" label-y="Ranking range per year" color="#142E7B" display-units="true" scientific-display="true">
+                                </ods-chart-serie>
+                            </ods-chart-query>
+                        </ods-chart>
+                    </ods-pane>
+                    <ods-pane title="Table" pane-auto-unload="true">
+                        <ods-table context="shanghaihistoric"
+                                   displayed-fields="world_rank,national_rank,year"></ods-table>
+                    </ods-pane>
+                </ods-tabs>
+            </div>
+        </div>
+    </div>
+</ods-dataset-context>
+
+</div>
+
+<style>
+  :root {
+    --drawer-width: 320px;
+    --map-width: calc(100% - var(--drawer-width));
+    --backdrop-width-when-modal-active: 75px;
+    --drawer-background-color: white;
+}
+
+.map-drawer-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+.map-drawer-container__map {
+    position:relative;
+    width: var(--map-width);
+}
+.map-drawer-container__info {
+    width: var(--drawer-width);
+}
+ 
+.map-drawer-container__backdrop {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+    background-color: #000;
+    cursor: default;
+    -webkit-transition: visibility .5s,opacity .5s;
+    transition: visibility .5s,opacity .5s;
+}
+.map-drawer-container__backdrop--active {
+    visibility: visible;
+    opacity: .45;  
+}
+.map-drawer-container__drawer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: var(--drawer-background-color);
+    transition: 0.3s;
+}
+.map-drawer-container__drawer__partial {
+    right: calc(-1 * var(--drawer-width));
+    width: var(--drawer-width);
+    z-index: 11;
+}
+.map-drawer-container__drawer__full {
+    right: calc(-1 * var(--map-width));
+    width: calc(var(--map-width) - var(--backdrop-width-when-modal-active));
+    z-index: 10;
+}
+
+.map-drawer-container__drawer__close {
+    position: absolute;
+    top: 0px;
+    right: 8px;
+    font-size: 1.5em;
+}
+
+ 
+.map-drawer-container--active .map-drawer-container__drawer__partial {
+    right: 0;
+}
+
+ 
+.map-drawer-container--active-full .map-drawer-container__drawer__full {
+    right: var(--drawer-width);
+}
+
+
+ 
+.odswidget.odswidget-map {
+    height: 500px;
+}
+.map-drawer-container__info {
+    background-color: #f8f8f8;
+    padding: 5px 10px;
+}
+.app h2, .map-drawer-container__drawer h2, .map-drawer-container__info h2 {
+    font-weight: 300;
+    color: black;
+    text-align: center;
+}
+.map-drawer-container__drawer {
+    padding: 5px 10px;
+}
+.map-drawer-container__drawer h3 {
+    font-weight: 100;
+    color: black;
+    margin-top: 0px;
+    text-align: center;
+}
+ul {
+    list-style: none;
+    position: relative;
+    padding: 0;
+    overflow: auto;
+}
+li.univ {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0px;
+}
+li.univ:first-child {
+    border-bottom: 1px solid;
+    font-weight: 200;
+}
+.univ-name {
+    width: 100%;
+    font-weight: 100;
+    margin-left: 5px;
+}
+.univ-score {
+    margin: 0 5px;
+    font-weight: 600;
+}
+li.univ:first-child .univ-score {
+    width: 100%;
+    text-align: right;
+}
+.univ-selected {
+    border-left: 3px solid;
+    padding-left: 2px;
+    margin-left: 0;
+}
+</style>
+</p>
 
             </div>
 
@@ -418,9 +721,9 @@ N.B.: grey areas help the user to come back to the map quickly if they want to c
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2020-08-10 17:12:41 CEST" style="cursor:help">
+        <span title="Updated @ 2020-08-11 10:35:27 CEST" style="cursor:help">
 
-<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-08-10</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-08-10</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2020-08-11</text><text x="915" y="140" textLength="650" transform="scale(.1)">2020-08-11</text></g></svg>
         </span></div>
 
 

@@ -18,7 +18,49 @@
 
     
     
-        <script src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js" defer></script><script src="/discovery-hugo/js/meme.min.1ddf15eb9363fd04b3c492502fd29d6091d79d67f23394f9cbec42f3e85795cd.js" integrity="sha256-Hd8V65Nj/QSzxJJQL9KdYJHXnWfyM5T5y&#43;xC8&#43;hXlc0="></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-sanitize.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/i18n/angular-locale_fr-fr.js"></script>
+<script type="text/javascript" src="//opendatasoft.github.io/ods-widgets/dist/ods-widgets.js"></script>
+
+       
+       <script type="text/javascript">
+           var ods = angular.module('ods-widgets');
+           ods.run(function(gettextCatalog) {
+               gettextCatalog.setStrings('fr', {
+                   'Clear all': 'Tout effacer',
+                   'More': 'Voir plus',
+                   'Less': 'Voir moins',
+                   'Download image': 'Télécharger l\'image'
+               });
+               gettextCatalog.setCurrentLanguage('fr');
+           });
+       </script>
+
+       
+       
+
+       
+       <script type="text/javascript">
+           angular.module('ods-widgets').config(function(ODSWidgetsConfigProvider) {
+               ODSWidgetsConfigProvider.setConfig({
+                   "basemaps": [
+                       {
+                           "label": "Stamen",
+                           "provider": "stamen.toner"
+                       },
+                       {
+                           "url": "https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png",
+                           "strictTMS": false,
+                           "provider": "custom",
+                           "label": "Thunderforest",
+                           "id": "land"
+                       }
+                   ]
+               });
+           });
+       </script><script src="https://cdn.jsdelivr.net/npm/lunr@2.3.8/lunr.min.js" defer></script><script src="/discovery-hugo/js/meme.min.028f97b22694be266af8db0f3f059f5dd311a1092ded2a97f66b5f9d2899e8d7.js" integrity="sha256-Ao&#43;XsiaUviZq&#43;NsPPwWfXdMRoQkt7SqX9mtfnSiZ6Nc="></script>
 
     
 
@@ -26,6 +68,8 @@
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Comfortaa:wght@700&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM&#43;Plex&#43;Serif:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;family=Comfortaa:wght@700&amp;display=swap" /></noscript>
+    
+    <link rel="stylesheet" href="https://opendatasoft.github.io/ods-widgets/dist/ods-widgets.css">
 
     <meta name="author" content="reuixiy" /><meta name="description" content="MemE is a powerful and highly customizable GoHugo theme for personal blogs." />
 
@@ -54,7 +98,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "datePublished": "1969-07-20T20:17:43+00:00",
-        "dateModified": "2020-08-10T17:12:41+02:00",
+        "dateModified": "2020-08-11T10:35:27+02:00",
         "url": "http://etienneburdet.com/discovery-hugo/posts/",
         "name": "Posts",
         "description": "MemE is a powerful and highly customizable GoHugo theme for personal blogs.",
